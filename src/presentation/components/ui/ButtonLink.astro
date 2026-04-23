@@ -1,0 +1,16 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'primary' | 'secondary';
+}
+
+const { href, label, variant = 'primary' } = Astro.props;
+const base = 'inline-flex items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold transition duration-300';
+const styles =
+  variant === 'primary'
+    ? 'border-[var(--accent)] bg-[var(--accent)] text-[#111827] hover:translate-y-[-1px] hover:shadow-[0_0_0_1px_var(--accent),0_8px_24px_rgba(214,165,75,0.35)]'
+    : 'border-[var(--line)] bg-transparent text-[var(--text-primary)] hover:border-[var(--accent-soft)] hover:text-[var(--accent)]';
+---
+
+<a href={href} class={`${base} ${styles}`}>{label}</a>

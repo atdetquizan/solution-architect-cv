@@ -1,0 +1,35 @@
+---
+import type { Profile } from '@domain/entities/Profile';
+import ButtonLink from '@presentation/components/ui/ButtonLink.astro';
+import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
+
+interface Props {
+  profile: Profile;
+}
+
+const { profile } = Astro.props;
+---
+
+<SectionContainer id="hero" className="pt-20 md:pt-24">
+  <div class="grid items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
+    <div>
+      <p class="text-sm tracking-[0.3em] text-[var(--accent)] uppercase">Portfolio</p>
+      <h1 class="mt-4 font-title text-6xl leading-none text-[var(--text-primary)] md:text-7xl">{profile.name}</h1>
+      <p class="mt-4 font-subtitle text-2xl text-[var(--accent-soft)]">{profile.role}</p>
+      <p class="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">{profile.tagline}</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <ButtonLink href="#projects" label="View Featured Projects" />
+        <ButtonLink href="#contact" label="Contact" variant="secondary" />
+      </div>
+      <div class="mt-10 grid max-w-xl grid-cols-3 gap-3">
+        <img src="/images/cloud-architecture.png" alt="Cloud architecture blueprint" class="h-20 w-full rounded-lg border border-[var(--line)] object-cover" loading="lazy" />
+        <img src="/images/distributed-systems.png" alt="Distributed systems map" class="h-20 w-full rounded-lg border border-[var(--line)] object-cover" loading="lazy" />
+        <img src="/images/enterprise-infrastructure.png" alt="Enterprise infrastructure skyline" class="h-20 w-full rounded-lg border border-[var(--line)] object-cover" loading="lazy" />
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle,rgba(175,200,232,0.32),transparent_70%)]"></div>
+      <img src={profile.profileImage} alt={`${profile.name} profile`} class="mx-auto aspect-square w-64 rounded-2xl border border-[var(--line-strong)] object-cover md:w-80" loading="eager" />
+    </div>
+  </div>
+</SectionContainer>

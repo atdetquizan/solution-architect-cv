@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --surface: #f7f3eb;
+  --panel: rgba(255, 255, 255, 0.62);
+  --line: rgba(36, 59, 90, 0.18);
+  --line-strong: rgba(36, 59, 90, 0.38);
+  --text-primary: #243b5a;
+  --text-secondary: #486386;
+  --accent: #d6a54b;
+  --accent-soft: #afc8e8;
+}
+
+@theme {
+  --font-title: "Bebas Neue", "Oswald", sans-serif;
+  --font-subtitle: "Oswald", "Inter", sans-serif;
+  --font-sans: "Inter", "Poppins", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-image:
+    linear-gradient(to right, rgba(36, 59, 90, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 59, 90, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at top right, rgba(175, 200, 232, 0.28), transparent 40%);
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-enterprise {
+  backdrop-filter: blur(8px);
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.card-enterprise:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: 0 16px 28px rgba(36, 59, 90, 0.14);
+}

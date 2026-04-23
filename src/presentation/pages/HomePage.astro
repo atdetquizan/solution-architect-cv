@@ -1,0 +1,31 @@
+---
+import type { PortfolioDataDto } from '@application/dto/PortfolioDataDto';
+import AboutSection from '@presentation/components/sections/AboutSection.astro';
+import CertificationsSection from '@presentation/components/sections/CertificationsSection.astro';
+import ContactSection from '@presentation/components/sections/ContactSection.astro';
+import ExperienceSection from '@presentation/components/sections/ExperienceSection.astro';
+import HeroSection from '@presentation/components/sections/HeroSection.astro';
+import ProjectsSection from '@presentation/components/sections/ProjectsSection.astro';
+import SkillsSection from '@presentation/components/sections/SkillsSection.astro';
+import ScrollProgress from '@presentation/components/ui/ScrollProgress';
+import BaseLayout from '@presentation/layouts/BaseLayout.astro';
+
+interface Props {
+  data: PortfolioDataDto;
+}
+
+const { data } = Astro.props;
+---
+
+<BaseLayout title="Alex Rivera · Software & Solutions Architect" description="Futuristic architecture portfolio with enterprise-focused experience, projects, and certifications.">
+  <ScrollProgress client:load />
+  <main>
+    <HeroSection profile={data.profile} />
+    <AboutSection profile={data.profile} />
+    <SkillsSection items={data.skills} />
+    <ExperienceSection items={data.experiences} />
+    <CertificationsSection items={data.certifications} />
+    <ProjectsSection items={data.projects} />
+    <ContactSection contact={data.contact} />
+  </main>
+</BaseLayout>

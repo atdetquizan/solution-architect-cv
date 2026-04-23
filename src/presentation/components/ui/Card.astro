@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<article class="card-enterprise rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5 md:p-6">
+  <h3 class="font-subtitle text-2xl leading-tight">{title}</h3>
+  {subtitle && <p class="mt-2 text-sm text-[var(--text-secondary)]">{subtitle}</p>}
+  <div class="mt-4 text-sm text-[var(--text-secondary)]">
+    <slot />
+  </div>
+</article>
