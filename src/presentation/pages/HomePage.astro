@@ -1,5 +1,5 @@
 ---
-import type { PortfolioDataDto } from '@application/dto/PortfolioDataDto';
+import type { PortfolioViewModel } from '@presentation/view-models/portfolio.view-model';
 import AboutSection from '@presentation/components/sections/AboutSection.astro';
 import CertificationsSection from '@presentation/components/sections/CertificationsSection.astro';
 import ContactSection from '@presentation/components/sections/ContactSection.astro';
@@ -11,7 +11,7 @@ import ScrollProgress from '@presentation/components/ui/ScrollProgress';
 import BaseLayout from '@presentation/layouts/BaseLayout.astro';
 
 interface Props {
-  data: PortfolioDataDto;
+  data: PortfolioViewModel;
 }
 
 const { data } = Astro.props;

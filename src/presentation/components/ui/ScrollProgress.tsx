@@ -22,12 +22,17 @@ export const ScrollProgress = () => {
   return (
     <>
       <div
-        aria-hidden="true"
+        role="progressbar"
+        aria-label="Page scroll progress"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(progress)}
         style={{ width: `${progress}%` }}
         className="fixed top-0 left-0 z-50 h-0.5 bg-[var(--accent)] transition-[width] duration-150"
       />
       <button
         type="button"
+        aria-label="Scroll to top of page"
         className="fixed right-5 bottom-5 z-40 rounded-full border border-[var(--line-strong)] bg-[var(--panel)] px-4 py-2 text-xs font-semibold text-[var(--text-primary)] backdrop-blur-sm transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
