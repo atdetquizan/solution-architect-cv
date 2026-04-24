@@ -1,0 +1,25 @@
+---
+import type { Experience } from '@domain/entities/Experience';
+import Card from '@presentation/components/ui/Card.astro';
+
+interface Props {
+  items: Experience[];
+}
+
+const { items } = Astro.props;
+---
+
+<ol class="relative space-y-8 border-s border-[var(--line)] ps-6">
+  {items.map((item) => (
+    <li class="relative">
+      <span class="absolute -start-[1.05rem] top-4 h-3 w-3 rounded-full bg-[var(--accent)] shadow-[0_0_0_4px_rgba(214,165,75,0.18)]"></span>
+      <Card title={item.role} subtitle={`${item.company} · ${item.period}`}>
+        <ul class="space-y-2">
+          {item.highlights.map((highlight) => (
+            <li class="list-inside list-disc">{highlight}</li>
+          ))}
+        </ul>
+      </Card>
+    </li>
+  ))}
+</ol>

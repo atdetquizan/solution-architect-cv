@@ -1,0 +1,31 @@
+---
+import type { ContactInfo } from '@domain/entities/Contact';
+import type { ContactSectionContent } from '@domain/entities/SectionContent';
+import ButtonLink from '@presentation/components/ui/ButtonLink.astro';
+import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
+import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
+import { withBaseUrl } from '@shared/utils/withBaseUrl';
+
+interface Props {
+  contact: ContactInfo;
+  content: ContactSectionContent;
+}
+
+const { contact, content } = Astro.props;
+---
+
+<SectionContainer id="contact" className="pb-20">
+  <SectionTitle eyebrow={content.eyebrow} title={content.title} description={content.description} />
+  <div class="grid gap-4 rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-6 md:grid-cols-2 md:p-8">
+    <div class="space-y-2 text-sm">
+      <p><span class="text-[var(--accent)]">{content.emailLabel}:</span> <a href={`mailto:${contact.email}`} class="text-[var(--text-primary)] hover:text-[var(--accent)]">{contact.email}</a></p>
+      <p><span class="text-[var(--accent)]">{content.githubLabel}:</span> <a href={contact.github} class="text-[var(--text-primary)] hover:text-[var(--accent)]">{contact.github}</a></p>
+      <p><span class="text-[var(--accent)]">{content.linkedinLabel}:</span> <a href={contact.linkedin} class="text-[var(--text-primary)] hover:text-[var(--accent)]">{contact.linkedin}</a></p>
+    </div>
+    <div class="flex items-center gap-4">
+      <ButtonLink href={contact.linkedin} label={content.linkedinLabel} variant="secondary" />
+      <ButtonLink href={contact.github} label={content.githubLabel} variant="secondary" />
+      <ButtonLink href={withBaseUrl(contact.cvUrl)} label={content.downloadCvLabel} />
+    </div>
+  </div>
+</SectionContainer>

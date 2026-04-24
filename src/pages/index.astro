@@ -1,0 +1,11 @@
+---
+import { GetPortfolioDataUseCase } from '@application/use-cases/GetPortfolioDataUseCase';
+import { StaticPortfolioRepository } from '@infrastructure/repositories/StaticPortfolioRepository';
+import HomePage from '@presentation/pages/HomePage.astro';
+import { toPortfolioViewModel } from '@presentation/view-models/portfolio.view-model';
+
+const useCase = new GetPortfolioDataUseCase(new StaticPortfolioRepository());
+const data = toPortfolioViewModel(await useCase.execute());
+---
+
+<HomePage data={data} />

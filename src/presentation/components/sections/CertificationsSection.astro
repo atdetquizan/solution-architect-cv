@@ -1,0 +1,26 @@
+---
+import type { Certification } from '@domain/entities/Certification';
+import type { SectionHeaderContent } from '@domain/entities/SectionContent';
+import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
+import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
+
+interface Props {
+  items: Certification[];
+  content: SectionHeaderContent;
+}
+
+const { items, content } = Astro.props;
+---
+
+<SectionContainer id="certifications">
+  <SectionTitle eyebrow={content.eyebrow} title={content.title} description={content.description} />
+  <div class="grid gap-4 md:grid-cols-2">
+    {items.map((item) => (
+      <article class="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5">
+        <h3 class="font-subtitle text-xl">{item.title}</h3>
+        <p class="mt-2 text-sm text-[var(--text-secondary)]">{item.issuer}</p>
+        <p class="mt-2 text-xs tracking-[0.15em] text-[var(--accent)] uppercase">{item.year}</p>
+      </article>
+    ))}
+  </div>
+</SectionContainer>

@@ -1,0 +1,33 @@
+---
+import type { PortfolioViewModel } from '@presentation/view-models/portfolio.view-model';
+import AboutSection from '@presentation/components/sections/AboutSection.astro';
+import CertificationsSection from '@presentation/components/sections/CertificationsSection.astro';
+import ContactSection from '@presentation/components/sections/ContactSection.astro';
+import ExperienceSection from '@presentation/components/sections/ExperienceSection.astro';
+import HeroSection from '@presentation/components/sections/HeroSection.astro';
+import ProjectsSection from '@presentation/components/sections/ProjectsSection.astro';
+import SkillsSection from '@presentation/components/sections/SkillsSection.astro';
+import ScrollProgress from '@presentation/components/ui/ScrollProgress';
+import BaseLayout from '@presentation/layouts/BaseLayout.astro';
+
+interface Props {
+  data: PortfolioViewModel;
+}
+
+const { data } = Astro.props;
+const pageTitle = `${data.profile.name} · ${data.profile.role}`;
+const pageDescription = data.profile.summary;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ScrollProgress client:load />
+  <main>
+    <HeroSection profile={data.profile} content={data.sectionContent.hero} />
+    <AboutSection profile={data.profile} content={data.sectionContent.about} />
+    <SkillsSection items={data.skills} content={data.sectionContent.skills} />
+    <ExperienceSection items={data.experiences} content={data.sectionContent.experience} />
+    <CertificationsSection items={data.certifications} content={data.sectionContent.certifications} />
+    <ProjectsSection items={data.projects} content={data.sectionContent.projects} />
+    <ContactSection contact={data.contact} content={data.sectionContent.contact} />
+  </main>
+</BaseLayout>

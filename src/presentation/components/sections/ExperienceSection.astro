@@ -1,0 +1,19 @@
+---
+import type { Experience } from '@domain/entities/Experience';
+import type { SectionHeaderContent } from '@domain/entities/SectionContent';
+import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
+import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
+import Timeline from '@presentation/components/ui/Timeline.astro';
+
+interface Props {
+  items: Experience[];
+  content: SectionHeaderContent;
+}
+
+const { items, content } = Astro.props;
+---
+
+<SectionContainer id="experience">
+  <SectionTitle eyebrow={content.eyebrow} title={content.title} description={content.description} />
+  <Timeline items={items} />
+</SectionContainer>
