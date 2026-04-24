@@ -4,5 +4,5 @@ export const siteConfig = {
   role: 'Software & Solutions Architect',
   description:
     'Modern futuristic portfolio showcasing enterprise architecture, cloud-native systems, and technical leadership.',
-  url: 'https://solution-architect-cv.vercel.app',
+  url: 'https://atdetquizan.github.io/solution-architect-cv/',
 };

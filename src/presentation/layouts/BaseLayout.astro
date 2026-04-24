@@ -1,6 +1,7 @@
 ---
 import '@styles/global.css';
 import { siteConfig } from '@shared/constants/site';
+import { withBaseUrl } from '@shared/utils/withBaseUrl';
 
 interface Props {
   title?: string;
@@ -11,10 +12,11 @@ interface Props {
 const {
   title = `${siteConfig.owner} · ${siteConfig.role}`,
   description = siteConfig.description,
-  image = '/og-image.svg',
+  image = withBaseUrl('/og-image.svg'),
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url);
+const faviconUrl = withBaseUrl('/favicon.svg');
 ---
 
 <!doctype html>
@@ -25,7 +27,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url);
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={faviconUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link

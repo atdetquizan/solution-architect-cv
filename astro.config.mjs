@@ -7,5 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://solution-architect-cv.vercel.app',
+  site: 'https://atdetquizan.github.io',
+  base: '/solution-architect-cv',
 });

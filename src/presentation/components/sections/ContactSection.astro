@@ -3,6 +3,7 @@ import type { ContactInfo } from '@domain/entities/Contact';
 import ButtonLink from '@presentation/components/ui/ButtonLink.astro';
 import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
 import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
+import { withBaseUrl } from '@shared/utils/withBaseUrl';
 
 interface Props {
   contact: ContactInfo;
@@ -22,7 +23,7 @@ const { contact } = Astro.props;
     <div class="flex items-center gap-4">
       <ButtonLink href={contact.linkedin} label="LinkedIn" variant="secondary" />
       <ButtonLink href={contact.github} label="GitHub" variant="secondary" />
-      <ButtonLink href={contact.cvUrl} label="Download CV" />
+      <ButtonLink href={withBaseUrl(contact.cvUrl)} label="Download CV" />
     </div>
   </div>
 </SectionContainer>
