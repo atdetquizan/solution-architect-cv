@@ -1,18 +1,12 @@
 import type { PortfolioDataDto } from '@application/dto/PortfolioDataDto';
-import {
-  certificationData,
-  contactData,
-  experienceData,
-  profileData,
-  projectData,
-  skillData,
-} from '@infrastructure/static-data/portfolio.data';
+import portfolioData from '@infrastructure/static-data/portfolio.data.json';
 
 export const mapStaticPortfolioToDto = (): PortfolioDataDto => ({
-  profile: profileData,
-  skills: skillData,
-  experiences: experienceData,
-  certifications: certificationData,
-  projects: projectData,
-  contact: contactData,
+  profile: portfolioData.profile,
+  skills: portfolioData.skills,
+  experiences: portfolioData.experiences,
+  certifications: portfolioData.certifications,
+  projects: portfolioData.projects,
+  contact: portfolioData.contact,
+  sectionContent: portfolioData.sectionContent,
 });

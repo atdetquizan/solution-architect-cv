@@ -3,6 +3,7 @@ import type { ContactInfo } from '@domain/entities/Contact';
 import type { Experience } from '@domain/entities/Experience';
 import type { Profile } from '@domain/entities/Profile';
 import type { Project } from '@domain/entities/Project';
+import type { SectionContent } from '@domain/entities/SectionContent';
 import type { SkillCategory } from '@domain/entities/Skill';
 
 export interface PortfolioDataDto {
@@ -12,4 +13,5 @@ export interface PortfolioDataDto {
   certifications: Certification[];
   projects: Project[];
   contact: ContactInfo;
+  sectionContent: SectionContent;
 }

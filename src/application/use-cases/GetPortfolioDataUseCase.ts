@@ -5,7 +5,7 @@ export class GetPortfolioDataUseCase {
   constructor(private readonly portfolioRepository: PortfolioDataPort) {}
 
   async execute(): Promise<PortfolioDataDto> {
-    const [profile, skills, experiences, certifications, projects, contact] =
+    const [profile, skills, experiences, certifications, projects, contact, sectionContent] =
       await Promise.all([
         this.portfolioRepository.getProfile(),
         this.portfolioRepository.getSkillCategories(),
@@ -13,6 +13,7 @@ export class GetPortfolioDataUseCase {
         this.portfolioRepository.getCertifications(),
         this.portfolioRepository.getFeaturedProjects(),
         this.portfolioRepository.getContactInfo(),
+        this.portfolioRepository.getSectionContent(),
       ]);
 
     return {
@@ -22,6 +23,7 @@ export class GetPortfolioDataUseCase {
       certifications,
       projects,
       contact,
+      sectionContent,
     };
   }
 }

@@ -4,6 +4,7 @@ import type { Experience } from '@domain/entities/Experience';
 import type { Profile } from '@domain/entities/Profile';
 import type { Project } from '@domain/entities/Project';
 import type { PortfolioRepository } from '@domain/repositories/PortfolioRepository';
+import type { SectionContent } from '@domain/entities/SectionContent';
 import type { SkillCategory } from '@domain/entities/Skill';
 import { mapStaticPortfolioToDto } from '@infrastructure/mappers/portfolio.mapper';
 
@@ -32,5 +33,9 @@ export class StaticPortfolioRepository implements PortfolioRepository {
 
   async getContactInfo(): Promise<ContactInfo> {
     return this.data.contact;
+  }
+
+  async getSectionContent(): Promise<SectionContent> {
+    return this.data.sectionContent;
   }
 }

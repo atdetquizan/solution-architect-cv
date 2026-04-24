@@ -3,6 +3,7 @@ import type { ContactInfo } from '@domain/entities/Contact';
 import type { Experience } from '@domain/entities/Experience';
 import type { Profile } from '@domain/entities/Profile';
 import type { Project } from '@domain/entities/Project';
+import type { SectionContent } from '@domain/entities/SectionContent';
 import type { SkillCategory } from '@domain/entities/Skill';
 import type { PortfolioDataDto } from '@application/dto/PortfolioDataDto';
 
@@ -13,6 +14,7 @@ export interface PortfolioViewModel {
   certifications: Certification[];
   projects: Project[];
   contact: ContactInfo;
+  sectionContent: SectionContent;
 }
 
 export const toPortfolioViewModel = (data: PortfolioDataDto): PortfolioViewModel => ({
@@ -31,4 +33,13 @@ export const toPortfolioViewModel = (data: PortfolioDataDto): PortfolioViewModel
     stack: [...project.stack],
   })),
   contact: { ...data.contact },
+  sectionContent: {
+    hero: { ...data.sectionContent.hero },
+    about: { ...data.sectionContent.about },
+    skills: { ...data.sectionContent.skills },
+    experience: { ...data.sectionContent.experience },
+    certifications: { ...data.sectionContent.certifications },
+    projects: { ...data.sectionContent.projects },
+    contact: { ...data.sectionContent.contact },
+  },
 });

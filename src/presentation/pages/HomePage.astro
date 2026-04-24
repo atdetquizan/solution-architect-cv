@@ -15,17 +15,19 @@ interface Props {
 }
 
 const { data } = Astro.props;
+const pageTitle = `${data.profile.name} · ${data.profile.role}`;
+const pageDescription = data.profile.summary;
 ---
 
-<BaseLayout title="Alex Rivera · Software & Solutions Architect" description="Futuristic architecture portfolio with enterprise-focused experience, projects, and certifications.">
+<BaseLayout title={pageTitle} description={pageDescription}>
   <ScrollProgress client:load />
   <main>
-    <HeroSection profile={data.profile} />
-    <AboutSection profile={data.profile} />
-    <SkillsSection items={data.skills} />
-    <ExperienceSection items={data.experiences} />
-    <CertificationsSection items={data.certifications} />
-    <ProjectsSection items={data.projects} />
-    <ContactSection contact={data.contact} />
+    <HeroSection profile={data.profile} content={data.sectionContent.hero} />
+    <AboutSection profile={data.profile} content={data.sectionContent.about} />
+    <SkillsSection items={data.skills} content={data.sectionContent.skills} />
+    <ExperienceSection items={data.experiences} content={data.sectionContent.experience} />
+    <CertificationsSection items={data.certifications} content={data.sectionContent.certifications} />
+    <ProjectsSection items={data.projects} content={data.sectionContent.projects} />
+    <ContactSection contact={data.contact} content={data.sectionContent.contact} />
   </main>
 </BaseLayout>

@@ -1,28 +1,30 @@
 ---
 import type { Profile } from '@domain/entities/Profile';
+import type { AboutSectionContent } from '@domain/entities/SectionContent';
 import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
 import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
 
 interface Props {
   profile: Profile;
+  content: AboutSectionContent;
 }
 
-const { profile } = Astro.props;
+const { profile, content } = Astro.props;
 ---
 
 <SectionContainer id="about">
-  <SectionTitle eyebrow="About" title="Architecture-first leadership" description={profile.summary} />
+  <SectionTitle eyebrow={content.eyebrow} title={content.title} description={content.description || profile.summary} />
   <div class="grid gap-5 md:grid-cols-3">
     <article class="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5">
-      <h3 class="font-subtitle text-xl">Architecture mindset</h3>
+      <h3 class="font-subtitle text-xl">{content.architectureMindsetTitle}</h3>
       <p class="mt-3 text-sm text-[var(--text-secondary)]">{profile.architectureMindset}</p>
     </article>
     <article class="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5">
-      <h3 class="font-subtitle text-xl">Enterprise experience</h3>
+      <h3 class="font-subtitle text-xl">{content.enterpriseExperienceTitle}</h3>
       <p class="mt-3 text-sm text-[var(--text-secondary)]">{profile.enterpriseExperience}</p>
     </article>
     <article class="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5">
-      <h3 class="font-subtitle text-xl">Leadership experience</h3>
+      <h3 class="font-subtitle text-xl">{content.leadershipExperienceTitle}</h3>
       <p class="mt-3 text-sm text-[var(--text-secondary)]">{profile.leadershipExperience}</p>
     </article>
   </div>

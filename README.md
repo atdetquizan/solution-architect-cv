@@ -75,6 +75,19 @@ public/
 6. Featured Projects
 7. Contact (LinkedIn, GitHub, Email, Download CV)
 
+## Customize CV Content
+
+All portfolio and CV content is centralized in:
+
+- `src/infrastructure/static-data/portfolio.data.json`
+
+Update this JSON to customize profile, skills, experience, certifications, projects, and contact data. The changes are automatically reflected across all rendered sections and page metadata.
+
+Important:
+
+- `sectionContent` controls section headers and descriptive copy (Hero, About, Skills, Experience, Certifications, Projects, Contact).
+- `profile`, `skills`, `experiences`, `certifications`, `projects`, and `contact` control the section data lists and cards.
+
 ## Local Development
 
 > Recommended Node.js version: **22.12+**

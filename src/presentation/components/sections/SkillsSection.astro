@@ -1,18 +1,20 @@
 ---
 import type { SkillCategory } from '@domain/entities/Skill';
+import type { SectionHeaderContent } from '@domain/entities/SectionContent';
 import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
 import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
 import Tag from '@presentation/components/ui/Tag.astro';
 
 interface Props {
   items: SkillCategory[];
+  content: SectionHeaderContent;
 }
 
-const { items } = Astro.props;
+const { items, content } = Astro.props;
 ---
 
 <SectionContainer id="skills">
-  <SectionTitle eyebrow="Capabilities" title="Technical skills" description="A pragmatic stack for enterprise architecture and platform scalability." />
+  <SectionTitle eyebrow={content.eyebrow} title={content.title} description={content.description} />
   <div class="grid gap-4 md:grid-cols-2">
     {items.map((item) => (
       <article class="rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5">

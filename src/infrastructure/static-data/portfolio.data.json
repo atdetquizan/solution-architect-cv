@@ -1,0 +1,276 @@
+{
+  "profile": {
+    "name": "Anthony Fernando Torres Etquizan",
+    "role": "Lead Architect & Senior Frontend Engineer",
+    "tagline": "Arquitecto y desarrollador frontend con foco en Angular, microfrontends y plataformas enterprise escalables.",
+    "summary": "Ingeniero de Sistemas titulado con experiencia en arquitectura frontend, modernizacion de plataformas y liderazgo tecnico en empresas como NTT Data, Tul e Intercorp Retail.",
+    "architectureMindset": "Combino criterio de arquitectura, calidad de codigo y orientacion a negocio para entregar soluciones mantenibles y de alto impacto.",
+    "enterpriseExperience": "He liderado migraciones Angular multi-version, estrategias de microfrontends y automatizacion de despliegues para organizaciones de alto volumen.",
+    "leadershipExperience": "He coordinado equipos frontend, promovido estandares de desarrollo y guiado iniciativas de librerias compartidas y gobierno tecnico.",
+    "profileImage": "/images/profile.png"
+  },
+  "skills": [
+    {
+      "category": "Frontend Architecture",
+      "skills": [
+        "Microfrontends",
+        "Module Federation",
+        "Angular Elements",
+        "Web Components",
+        "Custom Elements"
+      ]
+    },
+    {
+      "category": "Angular Ecosystem",
+      "skills": [
+        "Angular 7-15",
+        "Nx/Monorepo",
+        "RxJS",
+        "NgRx Store",
+        "Angular Schematics",
+        "Angular Library"
+      ]
+    },
+    {
+      "category": "UI & Styling",
+      "skills": [
+        "HTML5",
+        "CSS3",
+        "SASS/SCSS",
+        "LESS",
+        "Bootstrap",
+        "ng-zorro",
+        "BEM"
+      ]
+    },
+    {
+      "category": "Testing & Quality",
+      "skills": [
+        "Unit Testing",
+        "Karma",
+        "Jasmine",
+        "Cypress",
+        "Code Review",
+        "ESLint Plugin Development"
+      ]
+    },
+    {
+      "category": "Backend & APIs",
+      "skills": [
+        "Node.js",
+        "NestJS",
+        "Spring Boot",
+        ".NET",
+        "PHP",
+        "Laravel",
+        "Symfony",
+        "REST APIs"
+      ]
+    },
+    {
+      "category": "Data & Persistence",
+      "skills": [
+        "MySQL",
+        "SQL Server",
+        "Entity Framework",
+        "Linq",
+        "Workbench"
+      ]
+    },
+    {
+      "category": "DevOps & Platform",
+      "skills": [
+        "Bitbucket Pipelines",
+        "NGINX",
+        "Azure Repos",
+        "CI/CD"
+      ]
+    },
+    {
+      "category": "Mobile & Cross Platform",
+      "skills": [
+        "Ionic",
+        "Flutter",
+        "Swift",
+        "Xcode"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp-1",
+      "company": "NTT DATA",
+      "role": "Lead Architect",
+      "period": "Abril 2023 - Actualidad",
+      "highlights": [
+        "Lidere migraciones de Angular 9 a 12 y de 12 a 15 con transiciones controladas y mejora de rendimiento.",
+        "Implemente arquitectura de microfrontends con modulos federados para escalar entregas por dominio.",
+        "Disene pipelines de Bitbucket y optimice NGINX para despliegues continuos y seguros.",
+        "Impulse Storybook para StencilJS y Angular, y participe en la creacion de librerias Angular y plugins de ESLint."
+      ]
+    },
+    {
+      "id": "exp-2",
+      "company": "Tul",
+      "role": "Frontend Developer",
+      "period": "Junio 2022 - Abril 2023",
+      "highlights": [
+        "Desarrolle aplicaciones con Angular 13 y modulos federados para experiencias escalables y mantenibles.",
+        "Trabaje con Redux, RxJS y NgRx Store para gestion de estado y flujos de datos consistentes.",
+        "Construi librerias reutilizables y automatizaciones con Angular Schematics para acelerar entregas.",
+        "Asegure calidad funcional con pruebas unitarias en Karma y Jasmine."
+      ]
+    },
+    {
+      "id": "exp-3",
+      "company": "NTT DATA",
+      "role": "Senior Frontend Developer",
+      "period": "Agosto 2020 - Junio 2022",
+      "highlights": [
+        "Desarrolle modulos Angular en versiones 7, 8, 9 y 12 bajo buenas practicas enterprise.",
+        "Cree web components con StencilJS y soluciones de microfrontends con Angular Elements.",
+        "Fortaleci la calidad con pruebas unitarias, pruebas E2E en Cypress y revisiones de codigo sistematicas.",
+        "Participe en una plataforma de prestamos hipotecarios en coordinacion con equipos backend."
+      ]
+    },
+    {
+      "id": "exp-4",
+      "company": "Intercorp Retail",
+      "role": "Desarrollador Web Senior",
+      "period": "Agosto 2019 - Agosto 2020",
+      "highlights": [
+        "Contribui al desarrollo de software DAD para integracion y automatizacion de procesos retail.",
+        "Trabaje bajo metodologia Scrum colaborando con equipos backend y Android.",
+        "Desarrolle microservicios con Spring Boot e investigue estrategias de microfrontend y web components."
+      ]
+    },
+    {
+      "id": "exp-5",
+      "company": "Peru Apps",
+      "role": "Leader Frontend / Desarrollador Angular Senior",
+      "period": "Octubre 2018 - Agosto 2019",
+      "highlights": [
+        "Lidere desarrollo de proyectos frontend y acompanamiento de un equipo de 2 a 3 developers.",
+        "Impulse una libreria Angular interna para estandarizar y acelerar desarrollo multi-proyecto.",
+        "Implemente consumo de APIs REST, guards, interceptors y arquitectura SPA en Angular 5, 6 y 7."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "title": "CCNA I: Network Fundamentals",
+      "issuer": "Universidad Cesar Vallejo / Cisco",
+      "year": "2013"
+    },
+    {
+      "id": "cert-2",
+      "title": "CCNA II: Routing Protocols and Concepts",
+      "issuer": "Universidad Cesar Vallejo / Cisco",
+      "year": "2013"
+    },
+    {
+      "id": "cert-3",
+      "title": "CCNA III: Scaling Networks",
+      "issuer": "Universidad Cesar Vallejo / Cisco",
+      "year": "2015"
+    },
+    {
+      "id": "cert-4",
+      "title": "Certificacion de Honor al Merito",
+      "issuer": "Universidad Cesar Vallejo",
+      "year": "Academico"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj-1",
+      "name": "Migracion Angular Multiversion",
+      "description": "Ejecucion de estrategia de migracion progresiva de Angular 9 a 12 y 12 a 15 con continuidad operativa.",
+      "stack": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "ESLint"
+      ],
+      "focus": "Modernizacion Frontend"
+    },
+    {
+      "id": "prj-2",
+      "name": "Plataforma Microfrontends Federada",
+      "description": "Implementacion de arquitectura de microfrontends con modulos federados para escalar equipos y despliegues.",
+      "stack": [
+        "Module Federation",
+        "Angular Elements",
+        "NGINX",
+        "Bitbucket Pipelines"
+      ],
+      "focus": "Arquitectura Escalable"
+    },
+    {
+      "id": "prj-3",
+      "name": "Ecosistema de Librerias y Calidad de Codigo",
+      "description": "Construccion de librerias Angular, Storybook y plugins ESLint para estandares de desarrollo enterprise.",
+      "stack": [
+        "Angular Library",
+        "Storybook",
+        "StencilJS",
+        "ESLint"
+      ],
+      "focus": "Productividad y Calidad"
+    }
+  ],
+  "contact": {
+    "email": "atdetquizan@gmail.com",
+    "github": "https://github.com/atdetquizan",
+    "linkedin": "https://www.linkedin.com/in/atdetquizan",
+    "cvUrl": "/CV-TORRESDETQUIZAN.pdf"
+  },
+  "sectionContent": {
+    "hero": {
+      "eyebrow": "Portfolio",
+      "primaryCtaLabel": "Ver Proyectos",
+      "secondaryCtaLabel": "Contacto",
+      "cloudArchitectureAlt": "Arquitectura cloud",
+      "distributedSystemsAlt": "Sistemas distribuidos",
+      "enterpriseInfrastructureAlt": "Infraestructura enterprise"
+    },
+    "about": {
+      "eyebrow": "Sobre Mi",
+      "title": "Arquitectura, ejecucion y liderazgo tecnico",
+      "description": "Perfil orientado a resolver problemas complejos con soluciones de software escalables, mantenibles y alineadas al negocio.",
+      "architectureMindsetTitle": "Enfoque de arquitectura",
+      "enterpriseExperienceTitle": "Experiencia enterprise",
+      "leadershipExperienceTitle": "Liderazgo tecnico"
+    },
+    "skills": {
+      "eyebrow": "Capacidades",
+      "title": "Stack tecnico",
+      "description": "Tecnologias y practicas aplicadas en arquitectura frontend, integracion y calidad de software."
+    },
+    "experience": {
+      "eyebrow": "Trayectoria",
+      "title": "Experiencia profesional",
+      "description": "Participacion en proyectos de transformacion digital, modernizacion de plataformas y gobierno tecnico."
+    },
+    "certifications": {
+      "eyebrow": "Formacion",
+      "title": "Cursos y certificaciones",
+      "description": "Certificaciones tecnicas y reconocimiento academico vinculados a redes, software y crecimiento profesional."
+    },
+    "projects": {
+      "eyebrow": "Casos Destacados",
+      "title": "Proyectos relevantes",
+      "description": "Iniciativas clave en migracion Angular, microfrontends y estandarizacion de desarrollo frontend."
+    },
+    "contact": {
+      "eyebrow": "Contacto",
+      "title": "Construyamos soluciones escalables",
+      "description": "Disponible para posiciones de arquitectura, liderazgo frontend y proyectos de modernizacion tecnologica.",
+      "emailLabel": "Email",
+      "githubLabel": "GitHub",
+      "linkedinLabel": "LinkedIn",
+      "downloadCvLabel": "Descargar CV"
+    }
+  }
+}

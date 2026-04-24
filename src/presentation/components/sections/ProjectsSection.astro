@@ -1,5 +1,6 @@
 ---
 import type { Project } from '@domain/entities/Project';
+import type { SectionHeaderContent } from '@domain/entities/SectionContent';
 import Card from '@presentation/components/ui/Card.astro';
 import SectionContainer from '@presentation/components/ui/SectionContainer.astro';
 import SectionTitle from '@presentation/components/ui/SectionTitle.astro';
@@ -7,13 +8,14 @@ import Tag from '@presentation/components/ui/Tag.astro';
 
 interface Props {
   items: Project[];
+  content: SectionHeaderContent;
 }
 
-const { items } = Astro.props;
+const { items, content } = Astro.props;
 ---
 
 <SectionContainer id="projects">
-  <SectionTitle eyebrow="Portfolio" title="Featured projects" description="Cloud-native and distributed enterprise solutions with architecture-first execution." />
+  <SectionTitle eyebrow={content.eyebrow} title={content.title} description={content.description} />
   <div class="grid gap-4 md:grid-cols-3">
     {items.map((item) => (
       <Card title={item.name} subtitle={item.focus}>
