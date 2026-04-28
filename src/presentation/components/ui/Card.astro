@@ -7,10 +7,10 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<article class="card-enterprise rounded-xl border border-[var(--line)] bg-[var(--panel)] p-5 md:p-6">
-  <h3 class="font-subtitle text-2xl leading-tight">{title}</h3>
-  {subtitle && <p class="mt-2 text-sm text-[var(--text-secondary)]">{subtitle}</p>}
-  <div class="mt-4 text-sm text-[var(--text-secondary)]">
+<article class="card-enterprise rounded-xl border border-(--line) bg-(--panel) p-4 sm:p-5 md:p-6">
+  <h3 class="font-subtitle text-xl leading-tight sm:text-2xl">{title}</h3>
+  {subtitle && <p class="mt-2 text-sm text-(--text-secondary)">{subtitle}</p>}
+  <div class="mt-4 text-sm leading-relaxed text-(--text-secondary)">
     <slot />
   </div>
 </article>

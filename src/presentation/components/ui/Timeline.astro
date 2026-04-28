@@ -9,12 +9,12 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ol class="relative space-y-8 border-s border-(--line) ps-6">
+<ol class="relative space-y-6 border-s border-(--line) ps-5 sm:space-y-8 sm:ps-6">
   {items.map((item) => (
     <li class="relative">
-      <span class="absolute inset-s-[-1.05rem] top-4 h-3 w-3 rounded-full bg-(--accent) shadow-[0_0_0_4px_rgba(214,165,75,0.18)]"></span>
+      <span class="absolute inset-s-[-0.95rem] top-4 h-3 w-3 rounded-full bg-(--accent) shadow-[0_0_0_4px_rgba(214,165,75,0.18)] sm:inset-s-[-1.05rem]"></span>
       <Card title={item.role} subtitle={`${item.company} · ${item.period}`}>
-        <ul class="space-y-2">
+        <ul class="space-y-2 text-sm leading-relaxed">
           {item.highlights.map((highlight) => (
             <li class="list-inside list-disc">{highlight}</li>
           ))}

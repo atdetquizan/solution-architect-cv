@@ -6,11 +6,11 @@ interface Props {
 }
 
 const { href, label, variant = 'primary' } = Astro.props;
-const base = 'btn-motion inline-flex items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold transition duration-300 will-change-transform';
+const base = 'btn-motion inline-flex min-h-11 w-full items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold transition duration-300 will-change-transform sm:w-auto';
 const styles =
   variant === 'primary'
     ? 'border-[var(--accent)] bg-[var(--accent)] text-[#111827] hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_0_0_1px_var(--accent),0_10px_26px_rgba(214,165,75,0.33)] active:translate-y-0 active:scale-100'
-    : 'border-[var(--line)] bg-transparent text-[var(--text-primary)] hover:-translate-y-0.5 hover:scale-[1.01] hover:border-[var(--accent-soft)] hover:text-[var(--accent)] active:translate-y-0 active:scale-100';
+    : 'border-[var(--line)] bg-transparent text-[var(--text-primary)] hover:-translate-y-0.5 hover:scale-[1.01] hover:border-[var(--accent-soft)] hover:bg-[rgba(175,200,232,0.08)] hover:text-[var(--accent)] active:translate-y-0 active:scale-100';
 ---
 
 <a href={href} class={`${base} ${styles}`}>{label}</a>
