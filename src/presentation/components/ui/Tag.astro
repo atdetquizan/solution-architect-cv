@@ -6,6 +6,6 @@ interface Props {
 const { text } = Astro.props;
 ---
 
-<span class="rounded-full border border-[var(--line-strong)] bg-[color-mix(in_oklab,var(--accent-soft)_18%,transparent)] px-3 py-1 text-xs font-medium tracking-wide text-[var(--text-primary)] uppercase">
+<span class="rounded-full border border-(--line-strong) bg-[color-mix(in_oklab,var(--accent-soft)_18%,transparent)] px-2.5 py-0.5 text-xs font-medium tracking-wide text-(--text-primary)">
   {text}
 </span>
