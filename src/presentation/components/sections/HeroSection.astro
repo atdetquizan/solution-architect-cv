@@ -16,17 +16,17 @@ const expertiseImages = [
   {
     src: '/images/cloud-architecture.png',
     alt: content.cloudArchitectureAlt,
-    zoomClass: 'scale-[1.73] sm:scale-[1.91]'
+    label: content.cloudArchitectureLabel,
   },
   {
     src: '/images/enterprise-infrastructure.png',
     alt: content.enterpriseInfrastructureAlt,
-    zoomClass: 'scale-[1.69] sm:scale-[1.85]'
+    label: content.enterpriseInfrastructureLabel,
   },
   {
     src: '/images/distributed-systems.png',
     alt: content.distributedSystemsAlt,
-    zoomClass: 'scale-[1.67] sm:scale-[1.81]'
+    label: content.distributedSystemsLabel,
   }
 ];
 ---
@@ -42,19 +42,24 @@ const expertiseImages = [
         <ButtonLink href="#projects" label={content.primaryCtaLabel} />
         <ButtonLink href="#contact" label={content.secondaryCtaLabel} variant="secondary" />
       </div>
-      <div class="mt-14 grid max-w-5xl gap-8 sm:grid-cols-3">
+      <div class="mt-14 grid max-w-5xl gap-5 sm:grid-cols-3">
         {
           expertiseImages.map((image) => (
-            <figure class="group flex h-52 items-center justify-center sm:h-56 md:h-60">
-              <img
-                src={withBaseUrl(image.src)}
-                alt={image.alt}
-                width="640"
-                height="360"
-                class={`h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.14] ${image.zoomClass}`}
-                loading="lazy"
-                decoding="async"
-              />
+            <figure class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 hover:border-(--accent)/30 hover:bg-white/10 hover:shadow-[0_0_28px_rgba(130,186,255,0.12)]">
+              <div class="flex h-40 items-center justify-center overflow-hidden sm:h-44">
+                <img
+                  src={withBaseUrl(image.src)}
+                  alt={image.alt}
+                  width="280"
+                  height="180"
+                  class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.06]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="mt-3 text-center text-sm font-medium tracking-wide text-(--text-secondary) group-hover:text-(--accent-soft) transition-colors duration-300">
+                {image.label}
+              </figcaption>
             </figure>
           ))
         }

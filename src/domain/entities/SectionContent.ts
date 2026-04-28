@@ -9,8 +9,11 @@ export interface HeroSectionContent {
   primaryCtaLabel: string;
   secondaryCtaLabel: string;
   cloudArchitectureAlt: string;
+  cloudArchitectureLabel: string;
   distributedSystemsAlt: string;
+  distributedSystemsLabel: string;
   enterpriseInfrastructureAlt: string;
+  enterpriseInfrastructureLabel: string;
 }
 
 export interface AboutSectionContent extends SectionHeaderContent {

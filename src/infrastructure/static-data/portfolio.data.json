@@ -232,8 +232,11 @@
       "primaryCtaLabel": "Ver Proyectos",
       "secondaryCtaLabel": "Contacto",
       "cloudArchitectureAlt": "Arquitectura cloud",
+      "cloudArchitectureLabel": "Cloud Architecture",
       "distributedSystemsAlt": "Sistemas distribuidos",
-      "enterpriseInfrastructureAlt": "Infraestructura enterprise"
+      "distributedSystemsLabel": "Distributed Systems",
+      "enterpriseInfrastructureAlt": "Infraestructura enterprise",
+      "enterpriseInfrastructureLabel": "Enterprise Infrastructure"
     },
     "about": {
       "eyebrow": "Sobre Mi",
