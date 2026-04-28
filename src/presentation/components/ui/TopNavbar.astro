@@ -1,0 +1,24 @@
+---
+interface Props {
+  ownerName: string;
+}
+
+const { ownerName } = Astro.props;
+const compactName = ownerName
+  .split(' ')
+  .slice(0, 2)
+  .join(' ');
+---
+
+<header data-navbar class="fixed top-4 left-1/2 z-40 w-[min(95vw,76rem)] -translate-x-1/2 rounded-2xl border border-(--line) bg-[rgba(247,243,235,0.7)] px-4 py-3 backdrop-blur-md md:px-5">
+  <nav class="flex items-center justify-between gap-4">
+    <a href="#hero" class="font-subtitle text-lg tracking-wide text-(--text-primary)">{compactName}</a>
+    <ul class="hidden items-center gap-5 text-sm font-medium text-(--text-secondary) md:flex">
+      <li><a href="#about" class="nav-link">Sobre mi</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Proyectos</a></li>
+      <li><a href="#contact" class="nav-link">Contacto</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta text-sm font-semibold">Hablemos</a>
+  </nav>
+</header>
