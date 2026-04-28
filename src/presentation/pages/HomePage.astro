@@ -8,6 +8,7 @@ import HeroSection from '@presentation/components/sections/HeroSection.astro';
 import ProjectsSection from '@presentation/components/sections/ProjectsSection.astro';
 import SkillsSection from '@presentation/components/sections/SkillsSection.astro';
 import ScrollProgress from '@presentation/components/ui/ScrollProgress';
+import TopNavbar from '@presentation/components/ui/TopNavbar.astro';
 import BaseLayout from '@presentation/layouts/BaseLayout.astro';
 
 interface Props {
@@ -21,6 +22,7 @@ const pageDescription = data.profile.summary;
 
 <BaseLayout title={pageTitle} description={pageDescription}>
   <ScrollProgress client:load />
+  <TopNavbar ownerName={data.profile.name} />
   <main>
     <HeroSection profile={data.profile} content={data.sectionContent.hero} />
     <AboutSection profile={data.profile} content={data.sectionContent.about} />

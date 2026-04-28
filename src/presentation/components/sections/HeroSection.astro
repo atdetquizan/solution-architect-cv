@@ -11,28 +11,70 @@ interface Props {
 }
 
 const { profile, content } = Astro.props;
+
+const expertiseImages = [
+  {
+    src: '/images/cloud-architecture.png',
+    alt: content.cloudArchitectureAlt,
+    zoomClass: 'scale-[1.73] sm:scale-[1.91]'
+  },
+  {
+    src: '/images/enterprise-infrastructure.png',
+    alt: content.enterpriseInfrastructureAlt,
+    zoomClass: 'scale-[1.69] sm:scale-[1.85]'
+  },
+  {
+    src: '/images/distributed-systems.png',
+    alt: content.distributedSystemsAlt,
+    zoomClass: 'scale-[1.67] sm:scale-[1.81]'
+  }
+];
 ---
 
-<SectionContainer id="hero" className="pt-20 md:pt-24">
-  <div class="grid items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
+<SectionContainer id="hero" className="max-w-7xl pt-24 md:pt-28">
+  <div class="grid items-center gap-14 md:grid-cols-[1.08fr_0.92fr]">
     <div>
-      <p class="text-sm tracking-[0.3em] text-[var(--accent)] uppercase">{content.eyebrow}</p>
-      <h1 class="mt-4 font-title text-6xl leading-none text-[var(--text-primary)] md:text-7xl">{profile.name}</h1>
-      <p class="mt-4 font-subtitle text-2xl text-[var(--accent-soft)]">{profile.role}</p>
-      <p class="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">{profile.tagline}</p>
+      <p class="text-sm tracking-[0.3em] text-(--accent) uppercase">{content.eyebrow}</p>
+      <h1 class="mt-4 font-title text-7xl leading-[0.9] text-(--text-primary) md:text-[6.2rem]">{profile.name}</h1>
+      <p class="mt-5 font-subtitle text-3xl text-(--accent-soft) md:text-[2.2rem]">{profile.role}</p>
+      <p class="mt-7 max-w-3xl text-2xl leading-relaxed text-(--text-secondary)">{profile.tagline}</p>
       <div class="mt-8 flex flex-wrap gap-4">
         <ButtonLink href="#projects" label={content.primaryCtaLabel} />
         <ButtonLink href="#contact" label={content.secondaryCtaLabel} variant="secondary" />
       </div>
-      <div class="mt-10 grid max-w-xl grid-cols-3 gap-3">
-        <img src={withBaseUrl('/images/cloud-architecture.png')} alt={content.cloudArchitectureAlt} class="h-20 w-full rounded-lg border border-[var(--line)] object-cover" loading="lazy" />
-        <img src={withBaseUrl('/images/distributed-systems.png')} alt={content.distributedSystemsAlt} class="h-20 w-full rounded-lg border border-[var(--line)] object-cover" loading="lazy" />
-        <img src={withBaseUrl('/images/enterprise-infrastructure.png')} alt={content.enterpriseInfrastructureAlt} class="h-20 w-full rounded-lg border border-[var(--line)] object-cover" loading="lazy" />
+      <div class="mt-14 grid max-w-5xl gap-8 sm:grid-cols-3">
+        {
+          expertiseImages.map((image) => (
+            <figure class="group flex h-52 items-center justify-center sm:h-56 md:h-60">
+              <img
+                src={withBaseUrl(image.src)}
+                alt={image.alt}
+                width="640"
+                height="360"
+                class={`h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.14] ${image.zoomClass}`}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))
+        }
       </div>
     </div>
     <div class="relative">
-      <div class="absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle,rgba(175,200,232,0.32),transparent_70%)]"></div>
-      <img src={withBaseUrl(profile.profileImage)} alt={`${profile.name} profile`} class="mx-auto aspect-square w-64 rounded-2xl border border-[var(--line-strong)] object-cover md:w-80" loading="eager" />
+      <div class="relative mx-auto w-fit">
+        <div class="absolute inset-1 -z-10 rounded-full bg-[radial-gradient(circle,rgba(130,186,255,0.9),rgba(41,91,170,0.5),transparent_74%)] blur-3xl"></div>
+        <div class="absolute -inset-3 -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,224,160,0.58),rgba(255,224,160,0.05)_64%,transparent_76%)] blur-xl"></div>
+        <img
+          src={withBaseUrl(profile.profileImage)}
+          alt={`Foto de perfil de ${profile.name}`}
+          width="384"
+          height="384"
+          class="mx-auto aspect-square w-96 scale-[1.6] object-contain drop-shadow-[0_34px_84px_rgba(19,52,99,0.42)] md:w-136 md:scale-[1.6]"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
     </div>
   </div>
 </SectionContainer>
